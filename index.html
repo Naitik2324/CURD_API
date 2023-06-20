@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Nominee</title>
+        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+       
+    </head>
+    <body>
+        
+        <h3>Add Nominee</h3>
+        <hr>
+        <form action="#">
+        <div>
+        <label for="relationship">Relationship : </label>
+        <select id="relationship" >
+            <option value="null" selected disabled>Select an Option</option>
+            <option value="Husband">Husband</option>
+            <option value="Wife">Wife</option>
+            <option value="Daughter">Daughter</option>
+            <option value="Son">Son</option>
+            <option value="Mother">Mother</option>
+            <option value="Father">Father</option>
+            <option value="Brother">Brother</option>
+            <option value="Sister">Sister</option>
+        </select>
+        <span hidden id="check_relationship">Please select your relationship</span>
+
+        <br><label for="nominee name">Nominee Name : </label>
+        <input type="text" id="nominee_name" pattern="[A-z]{2,}">
+        <span hidden id="check_nominee_name">Please select your Name</span>
+
+        <br><label for="dob">Date of Birth : </label>
+        <input type="date" id="dob" max="2023-06-16">
+        <span hidden id="check_dob">Please select your Date of Birth</span>
+
+        <br><label for="address">Address </label><br>
+        
+            <div>
+                <input type="radio" name="address" id="new_add" value="new_add">Field to enter new address
+                <input type="radio" name="address" id="old_add" value="old_add">Same as my address
+                <span hidden id="check_address">Please select your Address</span>
+                <br><textarea rows="4" cols="50" id="address"></textarea>
+            </div>
+
+        <br><label for="pincode">Pincode : </label>
+        <input type="text" id="pincode" >
+        <span hidden id="check_pincode">Please select your Pincode</span>
+
+        <br><label for="city">city : </label>
+        <input type="text" id="city" >
+        <span hidden id="check_city">Please select your City</span>
+
+        <br><label for="State">State : </label>
+        <input type="text" id="State" >
+        <span hidden id="check_state">Please select your State</span>
+
+        <br><label for="Country">Country : </label>
+        <input type="text" id="Country" >
+        <span hidden id="check_country">Please select your Country</span>
+
+        <br><input type="submit" value=" Save Details " onclick="check_validations(event)">
+        </div>
+        </form>
+        <script src="index.js"></script>
+        <script>
+            console.log("in index page");
+        </script>
+    </body>
+</html>

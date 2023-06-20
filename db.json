@@ -1,0 +1,58 @@
+{
+  "nominee_details": [
+    {
+      "relationship": "Husband",
+      "nominee_name": "Pankaj Bagia",
+      "dob": "1981-02-13",
+      "address": "South Bopal",
+      "pincode": "380058",
+      "city": "ahm",
+      "State": "guj",
+      "Country": "India",
+      "id": 4
+    },
+    {
+      "relationship": "Wife",
+      "nominee_name": "manisha",
+      "dob": "2023-06-14",
+      "address": "",
+      "pincode": "380058",
+      "city": "ahm",
+      "State": "guj",
+      "Country": "India",
+      "id": 6
+    },
+    {
+      "relationship": "Husband",
+      "nominee_name": "Naitik ",
+      "dob": "2023-06-07",
+      "address": "",
+      "pincode": "2",
+      "city": "ahm",
+      "State": "guj",
+      "Country": "India",
+      "id": 7
+    },
+    {
+      "relationship": "Husband",
+      "nominee_name": "Naitik ",
+      "dob": "2023-06-13",
+      "address": "",
+      "pincode": "380058",
+      "city": "ahm",
+      "State": "guj",
+      "Country": "India",
+      "id": 8
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

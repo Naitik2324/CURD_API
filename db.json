@@ -12,33 +12,31 @@
       "id": 4
     },
     {
-      "relationship": "Wife",
-      "nominee_name": "manisha",
-      "dob": "2023-06-14",
-      "address": "",
+      "relationship": "Son",
+      "nominee_name": "Naitik ",
+      "dob": "2003-03-23",
+      "address": "South Bopal",
+      "pincode": "380058",
+      "city": "ahm",
+      "State": "guj",
+      "Country": "India",
+      "id": 5
+    },
+    {
+      "relationship": "Daughter",
+      "nominee_name": "NAVYA",
+      "dob": "2011-10-28",
+      "address": "Bopal",
       "pincode": "380058",
       "city": "ahm",
       "State": "guj",
       "Country": "India",
       "id": 6
-    },
-    {
-      "relationship": "Husband",
-      "nominee_name": "Naitik ",
-      "dob": "2023-06-07",
-      "address": "",
-      "pincode": "2",
-      "city": "ahm",
-      "State": "guj",
-      "Country": "India",
-      "id": 7
     }
   ],
-  "comments": [
+  "address": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "add": "South Bopal"
     }
   ],
   "profile": {

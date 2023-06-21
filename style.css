@@ -1,140 +1,40 @@
-body{
-    background-color:ghostwhite;
-}
-label {
-    font-weight: bold;
-}
-/* Chrome, Safari, Edge, Opera  gainsboro*/
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-/* Firefox */
-
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
-body {
-    overflow: auto;
-}
-
-
-
-.table {
-    padding: auto;
-    text-align: left;
-    width: 100%;
-}
-
-input[type=text],
-select {
-    /* width: 100%; */
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    opacity: 1;
-    /* color: red; */
-}
-
-input[type=button] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    opacity: initial;
-}
-
- input ::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    /* color: red; */
-    /* Firefox */
-}
-
-input[type=button]:hover {
-    background-color: #45a049;
-}
-
-input[name=name],input[name=country],input[name=city] {
-    width: 250%;
-}
-.textarea{
-    width: 68%;
-}
-.form-control{
-    width: 30%;
-}
-.Nominee_name{
-    display: block;
-    position: absolute;
-    margin-top: -94px;
-    margin-left: 30%;
-}
-input[type=number], input[name=state]{
-    width: 30%;
-}
-.country{
-    margin-top: -102px;
-}
-.search{
-    width: 100%;
-}
-.details{
-    margin: 10px;
-}
 body {font-family: Arial, Helvetica, sans-serif;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  top: -83px;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-span,p{
-    color: red;
-}
- p{
-    display: none;
-}
+            
+            /* The Modal (background) */
+            .modal {
+              display: none; /* Hidden by default */
+              position: fixed; /* Stay in place */
+              z-index: 1; /* Sit on top */
+              padding-top: 100px; /* Location of the box */
+              left: 0;
+              top: 0;
+              width: 100%; /* Full width */
+              height: 100%; /* Full height */
+              overflow: auto; /* Enable scroll if needed */
+              background-color: rgb(0,0,0); /* Fallback color */
+              background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+            
+            /* Modal Content */
+            .modal-content {
+              background-color: #fefefe;
+              margin: auto;
+              padding: 20px;
+              border: 1px solid #888;
+              width: 80%;
+            }
+            
+            /* The Close Button */
+            .close {
+              color: #aaaaaa;
+              float: right;
+              font-size: 28px;
+              font-weight: bold;
+            }
+            
+            .close:hover,
+            .close:focus {
+              color: #000;
+              text-decoration: none;
+              cursor: pointer;
+            }

@@ -149,19 +149,6 @@ function set_values(id){
     .then(response => response.json())
     .then(data =>{
         console.log(data);
-        const el = document.getElementById("nominee_name");
-        console.log(el);
-        document.getElementById("edit_relationship").selected = data.relationship;
-        document.getElementById("edit_nominee_name").innerHTML = data.nominee_name;
-        document.getElementById("edit_dob").innerHTML = data.dob; 
-        //var new_add = document.getElementById("new_add").value;
-        document.getElementById("edit_address").innerHTML = data.address;
-        //var old_add = document.getElementById("old_add").value;
-        document.getElementById("edit_pincode").innerHTML = data.pincode;
-        document.getElementById("edit_city").innerHTML = data.city;
-        document.getElementById("edit_State").innerHTML = data.State ;
-        document.getElementById("edit_Country").innerHTML = data.Country;
-
     })
     .catch(error => console.log(error))
 }

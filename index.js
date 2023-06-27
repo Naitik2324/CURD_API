@@ -4,6 +4,17 @@ new_add.addEventListener('click',() => {
     document.getElementById("address").value ='';
     document.getElementById("address").readOnly = false;
     document.getElementById("check_address").hidden= true;
+    if(new_add.checked)
+    {
+        if(address === ''){
+            document.getElementById("check_address").hidden= false;
+        }
+        else{
+            document.getElementById("address").value ='';
+            document.getElementById("address").readOnly = false;
+            document.getElementById("check_address").hidden= true;
+        }
+    }
 
 });
 

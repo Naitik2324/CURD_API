@@ -30,7 +30,7 @@
         <span hidden id="check_nominee_name">Please select your Name</span>
 
         <br><label for="dob">Date of Birth : </label>
-        <input type="date" id="dob" max="2023-06-16">
+        <input type="date" id="dob">
         <span hidden id="check_dob">Please select your Date of Birth</span>
 
         <br><label for="address">Address </label><br>
@@ -63,7 +63,11 @@
         </form>
         <script src="index.js"></script>
         <script>
-            
+            var date = new Date();
+            current_date = date.getFullYear()+"-0"+(date.getMonth()+1)+"-"+date.getDate();
+            console.log(current_date);
+            document.getElementById("dob").max = current_date;
+            //document.getElementById("dob").setAttribute("max", current_date);
         </script>
     </body>
 </html>

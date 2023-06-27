@@ -24,7 +24,7 @@
     },
     {
       "relationship": "Daughter",
-      "nominee_name": "NAVYA",
+      "nominee_name": "NAVYA Bagia",
       "dob": "2011-10-28",
       "address": "Bopal",
       "pincode": "380058",
@@ -54,28 +54,6 @@
       "State": "guj",
       "Country": "India",
       "id": 9
-    },
-    {
-      "relationship": "Husband",
-      "nominee_name": "Pankaj Bagia",
-      "dob": "2023-06-03",
-      "address": "South Bopal",
-      "pincode": "380058",
-      "city": "ahm",
-      "State": "guj",
-      "Country": "India",
-      "id": 11
-    },
-    {
-      "relationship": "Husband",
-      "nominee_name": "naitik",
-      "dob": "2023-06-08",
-      "address": "",
-      "pincode": "380058",
-      "city": "Bopal",
-      "State": "Gujarat",
-      "Country": "India",
-      "id": 12
     }
   ],
   "address": [

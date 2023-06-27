@@ -1,11 +1,55 @@
+var new_add = document.getElementById("new_add");
+new_add.addEventListener('click',() => {
+    console.log("new_add clicked");
+    document.getElementById("address").value ='';
+    document.getElementById("address").readOnly = false;
+    document.getElementById("check_address").hidden= true;
+
+});
+
+var old_add = document.getElementById("old_add");
+old_add.addEventListener('click',() => {
+    console.log("old_add clicked");
+    fetch('http://localhost:3000/address')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data[0].add);
+        document.getElementById("address").value = data[0].add;
+        document.getElementById("address").readOnly = true;
+    })
+    .catch(error => console.log(error))
+});
+
+var pincode = document.getElementById("pincode");
+pincode.addEventListener("input",() =>{
+    fetch('http://localhost:3000/pincode')
+    .then(response => response.json())
+    .then(data => {
+        for(index in data){
+            //console.log(data[index].pincode);
+            if(pincode.value == data[index].pincode){
+                document.getElementById("city").value = data[index].city;
+                document.getElementById("city").readOnly = true;
+                document.getElementById("State").value = data[index].state;
+                document.getElementById("State").readOnly = true;
+                document.getElementById("Country").value = data[index].Country;
+                document.getElementById("Country").readOnly = true;
+            }
+            else if(pincode.value != data[index].pincode && pincode.value == ""){
+                document.getElementById("city").value = '';
+                document.getElementById("State").value = '';
+                document.getElementById("Country").value = '';
+            }
+        }
+    })
+});
+
 function check_validations(event){
     event.preventDefault();
 
     var relationship = document.getElementById("relationship").value;
     var nominee_name = document.getElementById("nominee_name").value;
     var dob = document.getElementById("dob").value; 
-    var new_add = document.getElementById("new_add");
-    var old_add = document.getElementById("old_add");
     var address = document.getElementById("address").value;
     var pincode = document.getElementById("pincode").value;
     var city = document.getElementById("city").value;
@@ -38,16 +82,9 @@ function check_validations(event){
                 }
             }
             else if(old_add.checked){
-                document.getElementById("check_address").hidden= true;
-                fetch('http://localhost:3000/address')
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data[0].add);
-                    document.getElementById("address").value = data[0].add;
-                    document.getElementById("address").readOnly = true;
-                })
-                .catch(error => console.log(error))
-            }
+                    document.getElementById("check_address").hidden= true;
+                }
+            
             else{
                 document.getElementById("check_address").hidden= false;
             }
@@ -71,7 +108,6 @@ function check_validations(event){
 }
 
 async function get_data(){
-    console.log("calling get_values");
 
     var data={relationship :"",nominee_name :"",dob :"",address :"",pincode:"",city :"",State: "",Country :""};
 
@@ -107,7 +143,7 @@ async function get_data(){
     }
 }
 async function view_data() {
-    console.log("view data called");
+   
     var temp ="";
     await fetch('http://localhost:3000/nominee_details')
     .then(response => response.json())
@@ -132,15 +168,18 @@ async function view_data() {
 }
 
 async function delete_data(id) {
-    
-    await fetch('http://localhost:3000/nominee_details/'+id,{
-        method :"DELETE",
-        headers : {
-            'Content-Type' :'application/json'
-        }
-    });
-    alert("Are you sure u want to delete ?");
-    
+
+    if(confirm("Are you sure You want to delete ?")){
+        await fetch('http://localhost:3000/nominee_details/'+id,{
+            method :"DELETE",
+            headers : {
+                'Content-Type' :'application/json'
+            }
+        });
+    }
+    else{
+        console.log("not deleted");
+    }
 }
 
 async function update_data(id){
@@ -185,21 +224,46 @@ function set_values(id){
         document.getElementById("edit_city").value = data.city;
         document.getElementById("edit_State").value = data.State;
         document.getElementById("edit_Country").value = data.Country;
-
-        put_values(id);
+        document.getElementById("btn_id").setAttribute("btnid", id); 
     })
     .catch(error => console.log(error))
 }
 
-async function put_values(id){
-    const res = edit_check_validations();
-    if(res == true)
-    console.log("its put function");
+async function put_values(){
+    let id = document.getElementById("btn_id").getAttribute("btnid");
+    
+
+    var data={relationship :"",nominee_name :"",dob :"",address :"",pincode:"",city :"",State: "",Country :""};
+
+    data.relationship = document.getElementById("edit_relationship").value;
+    data.nominee_name = document.getElementById("edit_nominee_name").value;
+    data.dob = document.getElementById("edit_dob").value; 
+    //var new_add = document.getElementById("new_add").value;
+    data.address = document.getElementById("address").value;
+    //var old_add = document.getElementById("old_add").value;
+    data.pincode = document.getElementById("edit_pincode").value;
+    data.city = document.getElementById("edit_city").value;
+    data.State = document.getElementById("edit_State").value;
+    data.Country = document.getElementById("edit_Country").value;
+
+    const res= await fetch('http://localhost:3000/nominee_details/'+id,{
+        method : 'PUT',
+        body : JSON.stringify(data),
+        headers :{
+            'Content-Type' :'application/json'
+        }
+    })
+    .catch(error => console.log(error));
+    if(res == 200)
+    {
+        location.href = '/view.html';
+    }
+   
 }
 
 function edit_check_validations(){
     // event.preventDefault();
-    console.log("called edit validations");
+    
 
     var relationship = document.getElementById("edit_relationship").value;
     var nominee_name = document.getElementById("edit_nominee_name").value;
@@ -256,8 +320,7 @@ function edit_check_validations(){
     }
     else
     {
-        // get_data();
-        console.log("now call get data");
-        return true;
+       
+        put_values();
     }
 }
